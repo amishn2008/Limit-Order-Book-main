@@ -28,14 +28,35 @@ Stop Order (Add, Modify & Cancel) — Converts into a Market Order once the mark
 
 Stop Limit Order (Add, Modify & Cancel) — Converts into a Limit Order when the market crosses its stop price.
 
-Project Structure
+## Project Tree
 Limit_Order_Book/
-├── Limit_Order_Book/        # Core LOB implementation
-├── Generate_Orders/         # Order data generator
-├── Process_Orders/          # Data processing and visualization
-├── test/                    # Unit and integration tests
-├── figures/                 # Figures for documentation
-└── CMakeLists.txt
+├── Limit_Order_Book/   *files that make up Limit Order Book
+│ ├── Book.cpp
+│ ├── Book.hpp
+│ ├── Limit.cpp
+│ ├── Limit.hpp
+│ ├── Order.cpp
+│ └── Order.hpp
+├── Generate_Orders/    *files to generate sample order data
+│ ├── GenerateOrders.cpp
+│ ├── GenerateOrders.hpp
+│ ├── initialOrders.txt
+│ └── orders.txt (removed because file size too large)
+├── Process_Orders/     *files to process sample order data
+│ ├── OrderPipeline.cpp
+│ ├── OrderPipeline.hpp
+│ ├── data_visualisation.py
+│ └── order_processing_times.csv
+├── test/               *unit tests
+│ ├── CMakeLists.txt
+│ ├── ExampleOrdersTests.cpp
+│ └── LimitOrderBookTests.cpp
+├── figures/
+├── googletest/
+├── main.cpp
+├── .gitignore
+├── CMakeLists.txt
+└── README.md
 
 Architecture
 <img src="./figures/architecture.png" alt="Architecture" width="800"/>
